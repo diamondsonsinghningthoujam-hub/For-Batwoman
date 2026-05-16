@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Preci(Batwoman)</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at top left,#2d1b69,#0f172a 40%),
+    radial-gradient(circle at bottom right,#00e5ff33,#000814 60%);
+    color:white;
+    position:relative;
+}
+
+/* Floating particles */
+
+.particle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:#7df9ff;
+    border-radius:50%;
+    opacity:0.7;
+    animation:float linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh) scale(0);
+    }
+    to{
+        transform:translateY(-10vh) scale(1);
+    }
+}
+
+/* Main Card */
+
+.container{
+    width:90%;
+    max-width:750px;
+    padding:35px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:
+    0 0 25px rgba(0,255,255,0.2),
+    0 0 60px rgba(138,43,226,0.2);
+
+    z-index:5;
+    text-align:center;
+    position:relative;
+}
+
+.title{
+    font-size:2.8rem;
+    font-weight:700;
+    margin-bottom:10px;
+    background:linear-gradient(to right,#00e5ff,#b388ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    color:#ddd;
+    margin-bottom:30px;
+}
+
+input{
+    width:80%;
+    padding:15px;
+    border:none;
+    border-radius:20px;
+    outline:none;
+    background:rgba(255,255,255,0.1);
+    color:white;
+    font-size:1rem;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+input::placeholder{
+    color:#ccc;
+}
+
+button{
+    margin-top:20px;
+    padding:14px 35px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(45deg,#00e5ff,#8a2be2);
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:600;
+    box-shadow:0 0 20px rgba(0,255,255,0.4);
+}
+
+button:hover{
+    transform:scale(1.06);
+}
+
+.letter{
+    margin-top:30px;
+    display:none;
+    text-align:left;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    line-height:1.9;
+    animation:fadeIn 1s ease;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.success{
+    color:#7df9ff;
+    margin-top:15px;
+    font-weight:600;
+}
+
+.error{
+    color:#ff6b6b;
+    margin-top:15px;
+    font-weight:600;
+}
+
+/* Fireworks */
+
+.firework{
+    position:absolute;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    animation:explode 1.2s ease-out forwards;
+    pointer-events:none;
+}
+
+@keyframes explode{
+    0%{
+        transform:translate(0,0) scale(1);
+        opacity:1;
+    }
+
+    100%{
+        transform:translate(var(--x),var(--y)) scale(0);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Floating Particles -->
+
+<script>
+for(let i=0;i<70;i++){
+
+    let particle=document.createElement('div');
+    particle.classList.add('particle');
+
+    particle.style.left=Math.random()*100+'vw';
+    particle.style.animationDuration=(5+Math.random()*10)+'s';
+    particle.style.opacity=Math.random();
+
+    document.body.appendChild(particle);
+}
+</script>
+
+<div class="container">
+
+    <h1 class="title">Happy Birthday Preci(Batwoman) 🦇✨</h1>
+
+    <p class="subtitle">
+        A secret Wuthering Waves birthday message awaits you 💙
+    </p>
+
+    <input type="password"
+    id="password"
+    placeholder="Enter Secret Passcode">
+
+    <br>
+
+    <button onclick="unlockLetter()">
+        Unlock Birthday Letter
+    </button>
+
+    <div id="status"></div>
+
+    <div class="letter" id="letter">
+
+        <h2 style="text-align:center;margin-bottom:20px;">
+            🎂 Birthday Letter 🎂
+        </h2>
+
+        <p>
+        Dear Preci(Batwoman ),<br><br>
+
+        I am well aware that you are the one striving to save Singjamei town LOL 🙂,
+        and I wish you the very best of luck in your endeavors.
+        However, I believe you should allow yourself some rest,
+        as neglecting sleep may lead to serious health concerns such as insomnia LMAO.
+        Have some rest brdrr....<br><br>
+
+        Additionally, I would like to see to become a doctor🙂‍↔️.
+        As admirable as your work as Batwoman is,
+        it may not provide the financial stability you deserve in the long run LMAO🤡.<br><br>
+
+        I sincerely hope that we will remain a part of each other's lives and continue
+        this wonderful friendship for years to come.
+        Wishing you all the best in everything you do.<br><br>
+
+        💙 Happy Birthday Once Again Batwoman 💙
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+const correctPassword = "17th May 2005";
+
+function unlockLetter(){
+
+    const input=document.getElementById("password").value;
+    const letter=document.getElementById("letter");
+    const status=document.getElementById("status");
+
+    if(input===correctPassword){
+
+        letter.style.display="block";
+
+        status.innerHTML=
+        '<div class="success">Access Granted ✨</div>';
+
+        startFireworks();
+
+    }else{
+
+        status.innerHTML=
+        '<div class="error">Wrong Password ❌</div>';
+    }
+}
+
+function startFireworks(){
+
+    for(let i=0;i<180;i++){
+
+        let firework=document.createElement('div');
+
+        firework.classList.add('firework');
+
+        firework.style.left=Math.random()*window.innerWidth+'px';
+        firework.style.top=Math.random()*window.innerHeight+'px';
+
+        firework.style.background=
+        `hsl(${Math.random()*360},100%,70%)`;
+
+        firework.style.setProperty('--x',
+        `${(Math.random()-0.5)*300}px`);
+
+        firework.style.setProperty('--y',
+        `${(Math.random()-0.5)*300}px`);
+
+        document.body.appendChild(firework);
+
+        setTimeout(()=>{
+            firework.remove();
+        },1200);
+    }
+}
+
+</script>
+
+</body>
+</html>
